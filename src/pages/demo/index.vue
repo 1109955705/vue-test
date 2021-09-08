@@ -6,26 +6,28 @@ const list = [
   {
     title: "1",
     desc: "描述1",
+    src: "1.html",
   },
   {
     title: "2",
     desc: "描述2",
+    src: "2.html",
   },
   {
     title: "3",
     desc: "描述3",
+    src: "3.html",
   },
   {
     title: "4",
     desc: "描述4",
+    src: "4.html",
   },
 ];
 
-const toDetail = () => {
-  console.log("xxxxxxxxxx");
-  router.push({
-    name: "detail",
-  });
+const toDetail = (src: string) => {
+  console.log("xxxxxxxxxx", src);
+  router.push({ name: "detail", params: { src: src } });
 };
 </script>
 
@@ -38,7 +40,7 @@ const toDetail = () => {
           class="item"
           v-for="item of list"
           :key="item.title"
-          @click="toDetail"
+          @click="toDetail(item.src)"
         >
           <div>{{ item.title }}</div>
           <div>{{ item.desc }}</div>
@@ -50,6 +52,7 @@ const toDetail = () => {
 
 <style lang="postcss" scoped>
 .main {
+  overflow: hidden;
   height: 100%;
   padding: 0 40px;
 }

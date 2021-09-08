@@ -4,10 +4,10 @@ const bananer = () => import("../pages/bananer/index.vue");
 const detail = () => import("../pages/detail/index.vue");
 
 const routes = [
-  { path: "/", redirect: "/threejs-demo" },
+  { path: "/", redirect: "/demo" },
   {
-    path: "/threejs-demo",
-    name: "threejs-demo",
+    path: "/demo",
+    name: "demo",
     component: demo,
   },
   {
@@ -16,7 +16,7 @@ const routes = [
     component: bananer,
   },
   {
-    path: "/detail",
+    path: "/detail:src",
     name: "detail",
     component: detail,
   },

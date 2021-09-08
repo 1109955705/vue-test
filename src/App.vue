@@ -24,13 +24,8 @@ const toBananer = () => {
         <div class="userinfo-name">支</div>
       </section>
       <section class="nav">
-        <router-link class="nav-item" v-bind:to="'/threejs-demo'"
-          >THREEJS</router-link
-        >
+        <router-link class="nav-item" v-bind:to="'/demo'">THREEJS</router-link>
         <router-link v-bind:to="'/bananer'">CSS</router-link>
-      </section>
-      <section>
-        <div>..........</div>
       </section>
     </aside>
     <main class="main">
@@ -74,7 +69,8 @@ const toBananer = () => {
     border-radius: 50%;
   }
   & .userinfo-name {
-    font-size: 32px;
+    margin-top: 50px;
+    font-size: 48px;
     color: black;
   }
 }
