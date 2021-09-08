@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import path from "path";
 import cssEnv from "postcss-preset-env";
 import pxtorem from "postcss-pxtorem";
 
@@ -7,7 +8,8 @@ import pxtorem from "postcss-pxtorem";
 export default defineConfig({
   plugins: [vue()],
   alias: {
-    "@src": "/src/",
+    "~": path.resolve(__dirname, "./"),
+    "@": path.resolve(__dirname, "src"),
   },
   css: {
     postcss: {
@@ -15,6 +17,9 @@ export default defineConfig({
         cssEnv({
           preserve: true,
           stage: -1,
+          features: {
+            'nesting-rules': true
+          }
         }),
         pxtorem({
           rootValue: 75 / 2,

@@ -20,12 +20,14 @@ const toBananer = () => {
   <div class="page">
     <aside class="aside">
       <section class="userinfo">
-        <div>头像</div>
-        <div>支松岗</div>
+        <img class="img-head" src="@/assets/images/head.png" />
+        <div class="userinfo-name">支</div>
       </section>
       <section class="nav">
-        <router-link v-bind:to="'/demo'">say Hello</router-link>
-        <router-link v-bind:to="'/bananer'">say World</router-link>
+        <router-link class="nav-item" v-bind:to="'/threejs-demo'"
+          >THREEJS</router-link
+        >
+        <router-link v-bind:to="'/bananer'">CSS</router-link>
       </section>
       <section>
         <div>..........</div>
@@ -34,6 +36,7 @@ const toBananer = () => {
     <main class="main">
       <router-view />
     </main>
+    <div></div>
   </div>
 </template>
 
@@ -52,12 +55,37 @@ const toBananer = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 400px;
 }
 
 .nav {
   text-align: center;
   display: flex;
   flex-direction: column;
+}
+
+.userinfo {
+  margin-top: 200px;
+  text-align: center;
+  & .img-head {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  & .userinfo-name {
+    font-size: 32px;
+    color: black;
+  }
+}
+
+.nav {
+  margin-top: 200px;
+  font-size: 64px;
+  color: red;
+  & .nav-item {
+    margin-bottom: 50px;
+  }
 }
 
 .main {
